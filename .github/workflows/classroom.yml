@@ -1,0 +1,39 @@
+name: update colab link
+
+on:
+  push:
+    branches:
+    - main
+
+permissions:
+  contents: write  # This is crucial
+  
+jobs:
+  replace-username:
+    runs-on: ubuntu-latest
+    if: github.repository != 'ISE-CS4445-AI/challenge-7' && github.repository != 'ISE-CS4445-AI/cs4445-ai-classroom-challenge-7-Challenge-7'
+    steps:
+    - name: Check out the repository
+      uses: actions/checkout@v3
+
+    - name: Replace {reponame} with GitHub actor
+      run: |
+        # We do an in-place find and replace on the two target files:
+        sed -i "s#{reponame}#${{ github.repository }}#g" challenge-7.ipynb
+        sed -i "s#{reponame}#${{ github.repository }}#g" README.md
+
+    - name: Commit and push
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        
+        # Add only the two changed files, so as not to commit unintended changes:
+        git add challenge-7.ipynb README.md
+        
+        # If nothing changed, skip committing:
+        if [ -n "$(git status --porcelain)" ]; then
+          git commit -m "Replace {reponame} with ${{ github.repository }}"
+          git push
+        else
+          echo "No changes to commit."
+        fi
