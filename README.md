@@ -1,5 +1,5 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/S0KdjeHR)
-<a href="https://colab.research.google.com/github/{reponame}/blob/main/challenge-7.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+<a href="https://colab.research.google.com/github/ISE-CS4445-AI/challenge-7-tomjoyce1/blob/main/challenge-7.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 # Challenge 7:
 Welcome to your $7^{th}$ weekly challenge repository! ***Please read the following instructions and notes carefully before starting the challenge.***
